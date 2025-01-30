@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+          stage('Check Docker') {
+            steps {
+                sh 'echo "Docker path:" $(which docker)'
+                sh 'docker --version'
+            }
         stage('Docker version') {
             steps {
                 sh 'echo "Docker path:" $(which docker)'
@@ -12,7 +17,8 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/softingenieur/Jenkins.git'
                 sh 'pwd'
                 sh 'ls -la'
+                }
             }
-        }
+        }   
     }
 }
