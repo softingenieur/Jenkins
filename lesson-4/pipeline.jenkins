@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/softingenieur//lesson-4/Jenkins.git'
+                git branch: 'main', url: 'https://github.com/softingenieur/Jenkins.git'
                 sh 'pwd'
                 sh 'ls -la'
             }
