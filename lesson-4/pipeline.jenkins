@@ -1,21 +1,18 @@
 pipeline {
     agent any
-
     stages {
         stage('Docker version') {
             steps {
-                sh 'which docker'
-                sh 'docker version'
+                sh 'echo "Docker path:" $(which docker)'
+                sh 'docker --version'
             }
         }
         stage('Checkout') {
-            steps{
-                git branch: 'main',
-                    url: 'https://github.com/softingenieur/Jenkins/tree/master/lesson-4.git'   
-
-                 sh 'pwd'
-                 sh 'ls -la'        
-                }
+            steps {
+                git branch: 'main', url: 'https://github.com/softingenieur//lesson-4/Jenkins.git'
+                sh 'pwd'
+                sh 'ls -la'
+            }
         }
     }
 }
