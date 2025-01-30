@@ -4,7 +4,6 @@ pipeline {
         stage('Docker version') {
             steps {
                 sh 'echo "Docker path:" $(which docker)'
-                sh 'docker --version'
             }
         }
         stage('Checkout') {
