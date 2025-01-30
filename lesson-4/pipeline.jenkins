@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Docker version') {
             steps {
-                sh "echo $USER"
-                sh 'docker --version'
+                sh 'echo $USER'
+                sh 'docker version'
             }
         }
         stage('Checkout') {
