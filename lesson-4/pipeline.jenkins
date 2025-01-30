@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'ubuntu' }
+    agent any
 
     stages {
         stage('Docker version') {
@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps{
                 git branch: 'main',
-                    url: 'https://github.com/softingenieur/Jenkins.git'   
+                    url: 'https://github.com/softingenieur/Jenkins/tree/master/lesson-4.git'   
 
                  sh 'pwd'
                  sh 'ls -la'        
